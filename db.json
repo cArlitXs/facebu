@@ -31,8 +31,8 @@
         "state": "Estado"
     }],
     "relationship": [{
-        "user1": "1",
-        "user2": "2"
+        "userOrigin": "1",
+        "userTarget": "2"
     }],
     "messages": [{
         "id": "1",
@@ -41,8 +41,8 @@
         "user": "1"
     }],
     "reaction": [{
-        "message": "1",
-        "user": "1",
+        "messageId": "1",
+        "userId": "1",
         "reactionType": "Reac"
     }]
 }
