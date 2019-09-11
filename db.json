@@ -1,0 +1,47 @@
+{
+    "users": [{
+            "name": "USUARIO1",
+            "surname": "APELLIDOS1",
+            "birdthDate": "12/12/2019",
+            "startDate": "12/12/2019",
+            "user": "user",
+            "pass": "pass",
+            "id": 1
+        },
+        {
+            "name": "USUARIO2",
+            "surname": "APELLIDOS2",
+            "birdthDate": "12/12/2019",
+            "startDate": "12/12/2019",
+            "user": "user",
+            "pass": "pass",
+            "id": 2
+        }
+    ],
+    "events": [{
+        "id": "1",
+        "name": "Evento1",
+        "description": "Desc1",
+        "eventDate": "12/12/2019",
+        "users": [1, 2]
+
+    }],
+    "assist": [
+        { "user": "1", "event": "1", "state": "Estado" }
+    ],
+    "relationship": [
+        { "user1": "1", "user2": "2" }
+    ],
+    "messages": [{
+        "id": "1",
+        "content": "Mensaje1",
+        "publishDate": "12/12/2019",
+        "users": [1]
+
+    }],
+    "reaction": [{
+        "message": "1",
+        "user": "1",
+        "reactionType": "Reac"
+    }]
+}
