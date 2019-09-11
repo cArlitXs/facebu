@@ -1,6 +1,6 @@
-import { User } from "./user.model";
+import { User } from './user';
 
-export class Message.Model {
+export class Message {
   id: number;
   content: string;
   publishDate: string;
