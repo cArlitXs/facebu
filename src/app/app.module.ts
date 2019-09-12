@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { MainComponent } from './main/main.component';
 
 import { routing } from './app.routes';
 
@@ -23,7 +22,6 @@ import { ProfileComponent } from './profile/profile.component';
     ProfileComponent,
     FooterComponent,
     HeaderComponent,
-    MainComponent
   ],
   imports: [
     BrowserModule,
