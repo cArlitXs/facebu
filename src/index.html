@@ -26,6 +26,10 @@
             var scrolled = (winScroll / height) * 100;
             document.getElementById("bar").style.width = scrolled + "%";
         }
+
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
     </script>
 </body>
 

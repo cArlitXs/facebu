@@ -1,23 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: "app-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.css"]
 })
 export class HeaderComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
+  open: boolean = false;
 
-  open:boolean = false;
+  userName: string = "Name Surname";
 
-  toogleOpen(){
+  toogleOpen() {
     this.open = !this.open;
   }
 
-  checked: boolean;
-
+  setUserName(user:string){
+    this.userName = user;
+  }
 }
