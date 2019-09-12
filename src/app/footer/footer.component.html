@@ -1,34 +1,39 @@
 <footer class="page-footer font-small blue">
-    <div class="container-fluid text-center text-md-left bg-secondary py-3">
+    <div class="container-fluid text-center text-md-left bg-secondary py-3 px-4">
         <div class="row">
-            <div class="col-md-9 mt-md-0 mt-3">
-                <h5 class="text-uppercase">Footer Content</h5>
-                <p>Here you can use rows and columns to organize your footer content.</p>
+            <div class="col-md mt-md-0 mt-3">
+                <h5 class="text-uppercase">Angular Project</h5>
+                <ul>
+                    <li>Uriel Cruz Martínez</li>
+                    <li>Carlos Alvarez Linares</li>
+                    <li>Manuel Ortuño Santos</li>
+                </ul>
             </div>
             <hr class="clearfix w-100 d-md-none pb-3">
-            <div class="col-md mb-md-0 mb-3">
-                <h5 class="text-uppercase">Links</h5>
+            <div class="col-md mb-md-0 mb-3 text-center">
+                <!-- <img src="./assets/img/angular-logo.svg" alt="" srcset=""> -->
+                <i class="fab fa-angular angular-logo text-secondary"></i>
+            </div>
+            <div class="col-md mb-md-0 mb-3 text-right">
+                <h5 class="text-uppercase">Site map</h5>
                 <ul class="list-unstyled">
                     <li>
-                        <a href="/ ">Home</a>
+                        <a routerLink="/">Home</a>
                     </li>
                     <li>
-                        <a href="/stories">Stories</a>
-                    </li>
-                    <!-- <li>
-                        <a href="#">Cosas</a>
-                    </li> -->
-                    <li>
-                        <a href="/friends">Friends</a>
+                        <a routerLink="/stories">Stories</a>
                     </li>
                     <li>
-                        <a href="/events">Events</a>
+                        <a routerLink="/friends">Friends</a>
+                    </li>
+                    <li>
+                        <a routerLink="/events">Events</a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="footer-copyright text-center py-3 bg-dark text-white ">&#x24B8; {{year}} Copyright
-        <a href="/ " class="btn-link text-info "> {{title}}</a>
+    <div class="footer-copyright text-center py-3 bg-dark text-white">&#x24B8; {{year}} Copyright
+        <a routerLink="/" class="btn-link text-info "> {{title}}</a>
     </div>
 </footer>
