@@ -2,11 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { MainComponent } from './main/main.component';
+
+import { routing } from './app.routes';
+
 import { StoriesComponent } from './stories/stories.component';
 import { EventsComponent } from './events/events.component';
 import { FriendsComponent } from './friends/friends.component';
 import { ProfileComponent } from './profile/profile.component';
-import { routing } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -14,7 +20,10 @@ import { routing } from './app.routes';
     StoriesComponent,
     EventsComponent,
     FriendsComponent,
-    ProfileComponent
+    ProfileComponent,
+    FooterComponent,
+    HeaderComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
