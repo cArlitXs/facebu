@@ -13,6 +13,7 @@ import { StoriesComponent } from './stories/stories.component';
 import { EventsComponent } from './events/events.component';
 import { FriendsComponent } from './friends/friends.component';
 import { ProfileComponent } from './profile/profile.component';
+import { EventsListComponent } from './events-list/events-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ProfileComponent } from './profile/profile.component';
     ProfileComponent,
     FooterComponent,
     HeaderComponent,
-    MainComponent
+    MainComponent,
+    EventsListComponent
   ],
   imports: [
     BrowserModule,
