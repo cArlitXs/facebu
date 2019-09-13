@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
@@ -15,6 +15,11 @@ import { FriendsComponent } from './friends/friends.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EventsListComponent } from './events-list/events-list.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { Routes , RouterModule} from '@angular/router';
+import { AssistService } from './services/assist.service';
+import { EventService } from './services/event.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,9 +34,13 @@ import { EventsListComponent } from './events-list/events-list.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
     routing
   ],
-  providers: [],
+  providers: [
+    EventService,
+    AssistService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

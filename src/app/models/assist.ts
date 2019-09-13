@@ -1,5 +1,6 @@
 export class Assist {
-  user: number;
-  event: number;
-//   state: string;
+    id: number;
+    user: number;
+    event: number;
+    state: string;
 }

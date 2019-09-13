@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-//import { Observable } from "rxjs";
-//import { Event } from "../models/event";
+import { Event } from "../models/event";
 import { environment } from "../../environments/environment";
 
 @Injectable({
@@ -11,8 +10,19 @@ export class EventService {
 
     constructor(private http: HttpClient) { }
 
-    getEvents() {
-        return this.http.get(environment.apiUrl.concat("/events"));
+    url: string = environment.apiUrl.concat("/events");
+
+    getAllEvents() {
+        return this.http.get(this.url);
+    }
+
+    addEvent(event: Event) {
+        return this.http.post<Event>(this.url, event);
+    }
+
+    // There is no user login
+    getUserEvents() {
+        return this.http.get(this.url+"?users_like=1");
     }
 
 }
