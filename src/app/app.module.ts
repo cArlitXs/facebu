@@ -19,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Routes , RouterModule} from '@angular/router';
 import { AssistService } from './services/assist.service';
 import { EventService } from './services/event.service';
+import { FriendsListComponent } from './friends-list/friends-list.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { EventService } from './services/event.service';
     ProfileComponent,
     FooterComponent,
     HeaderComponent,
-    EventsListComponent
+    EventsListComponent,
+    FriendsListComponent
   ],
   imports: [
     BrowserModule,

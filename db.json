@@ -17,6 +17,24 @@
             "user": "user",
             "pass": "pass",
             "id": 2
+        },
+        {
+            "name": "USUARIO3",
+            "surname": "APELLIDOS3",
+            "birdthDate": "12/12/2019",
+            "startDate": "12/12/2019",
+            "user": "user",
+            "pass": "pass",
+            "id": 3
+        },
+        {
+            "name": "USUARIO4",
+            "surname": "APELLIDOS4",
+            "birdthDate": "12/12/2019",
+            "startDate": "12/12/2019",
+            "user": "user",
+            "pass": "pass",
+            "id": 4
         }
     ],
     "events": [
@@ -91,7 +109,18 @@
     "relationship": [
         {
             "userOrigin": "1",
-            "userTarget": "2"
+            "userTarget": "2",
+            "state": "friends"
+        },
+        {
+            "userOrigin": "1",
+            "userTarget": "3",
+            "state": "pending"
+        },
+        {
+            "userOrigin": "4",
+            "userTarget": "1",
+            "state": "pending"
         }
     ],
     "messages": [
