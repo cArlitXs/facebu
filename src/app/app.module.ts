@@ -14,6 +14,7 @@ import { EventsComponent } from './events/events.component';
 import { FriendsComponent } from './friends/friends.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EventsListComponent } from './events-list/events-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { EventsListComponent } from './events-list/events-list.component';
     EventsListComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     HttpClientModule,
     routing
