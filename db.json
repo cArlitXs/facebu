@@ -1,6 +1,5 @@
 {
-    "users": [
-        {
+    "users": [{
             "name": "USUARIO1",
             "surname": "APELLIDOS1",
             "birdthDate": "12/12/2019",
@@ -19,69 +18,30 @@
             "id": 2
         }
     ],
-<<<<<<< HEAD
     "events": [{
-=======
-    "events": [
-        {
->>>>>>> origin/uriel
             "id": "1",
             "name": "Evento1",
             "description": "Desc1",
             "eventDate": "12/12/2019",
-<<<<<<< HEAD
-            "users": [1, 2]
-=======
             "users": [
                 1,
                 2
             ]
->>>>>>> origin/uriel
         },
         {
             "id": "2",
             "name": "Evento2",
             "description": "Desc2",
-<<<<<<< HEAD
-            "eventDate": "12/12/2020",
-            "users": []
-=======
             "eventDate": "12/12/2019",
             "users": [
                 1,
                 2
             ]
->>>>>>> origin/uriel
         },
         {
             "id": "3",
             "name": "Evento3",
             "description": "Desc3",
-<<<<<<< HEAD
-            "eventDate": "12/12/2021",
-            "users": [2]
-        }
-    ],
-    "assist": [{
-        "user": "1",
-        "event": "1"
-    }],
-    "relationship": [{
-        "userOrigin": "1",
-        "userTarget": "2"
-    }],
-    "messages": [{
-        "id": "1",
-        "content": "Mensaje1",
-        "publishDate": "12/12/2019",
-        "user": "1"
-    }],
-    "reaction": [{
-        "messageId": "1",
-        "userId": "1",
-        "reactionType": "Reac"
-    }]
-=======
             "eventDate": "12/12/2019",
             "users": [
                 2
@@ -106,46 +66,44 @@
             ]
         }
     ],
-    "assist": [
-        {
+    "assist": [{
             "id": "1",
             "user": "1",
             "event": "1",
-            "state": "yes"
+            "state": "true"
         },
         {
             "id": "2",
             "user": "2",
             "event": "2",
-            "state": "yes"
+            "state": "true"
         },
         {
             "id": "3",
             "user": "2",
             "event": "1",
-            "state": "no"
+            "state": "false"
+        },
+        {
+            "id": "4",
+            "user": "1",
+            "event": "2",
+            "state": "true"
         }
     ],
-    "relationship": [
-        {
-            "userOrigin": "1",
-            "userTarget": "2"
-        }
-    ],
-    "messages": [
-        {
-            "id": "1",
-            "content": "Mensaje1",
-            "publishDate": "12/12/2019",
-            "user": "1"
-        }
-    ],
-    "reaction": [
-        {
-            "messageId": "1",
-            "userId": "1",
-            "reactionType": "Reac"
-        }
-    ]
->>>>>>> origin/uriel
+    "relationship": [{
+        "userOrigin": "1",
+        "userTarget": "2"
+    }],
+    "messages": [{
+        "id": "1",
+        "content": "Mensaje1",
+        "publishDate": "12/12/2019",
+        "user": "1"
+    }],
+    "reaction": [{
+        "messageId": "1",
+        "userId": "1",
+        "reactionType": "Reac"
+    }]
 }

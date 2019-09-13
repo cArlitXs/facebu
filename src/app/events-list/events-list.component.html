@@ -25,8 +25,8 @@
                 <td>{{item.eventDate}}</td>
                 <td>
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-outline-primary">
-                            <input type="checkbox" checked="" autocomplete="off"><i
+                        <label class="btn btn-outline-success">
+                            <input type="checkbox" [checked]="item.checked == true" autocomplete="off"><i
                                 class="fas fa-sign-in-alt mr-1"></i><span class="d-none d-md-inline-block">Go!</span>
                         </label>
                     </div>
