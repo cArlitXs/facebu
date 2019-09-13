@@ -1,0 +1,35 @@
+<h4>Event list:</h4>
+<!-- <div class="row py-1" *ngFor="let item of eventsTest">
+    <div class="col-md">{{item.name}}</div>
+    <div class="col-md">{{item.description}}</div>
+    <div class="col-md">{{item.eventDate}}</div>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-outline-primary"><i class="fas fa-sign-in-alt mr-1"></i>Go!</button>
+        <button type="button" class="btn btn-outline-warning"><i class="fas fa-minus-circle mr-1"></i>Decline</button>
+    </div>
+</div> -->
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Parcitipation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of eventsArr">
+                <td>{{item.name}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.eventDate}}</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button (click)="setYesAssist()" type="button" class="btn btn-outline-primary"><i class="fas fa-sign-in-alt mr-1"></i><span class="d-none d-md-inline-block">Go!</span></button>
+                        <button (click)="setNotAssist()" type="button" class="btn btn-outline-warning"><i class="fas fa-minus-circle mr-1"></i><span class="d-none d-md-inline-block">Decline</span></button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
