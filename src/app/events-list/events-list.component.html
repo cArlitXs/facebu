@@ -25,9 +25,15 @@
                 <td>{{item.eventDate}}</td>
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <button (click)="setYesAssist()" type="button" class="btn btn-outline-primary"><i class="fas fa-sign-in-alt mr-1"></i><span class="d-none d-md-inline-block">Go!</span></button>
-                        <button (click)="setNotAssist()" type="button" class="btn btn-outline-warning"><i class="fas fa-minus-circle mr-1"></i><span class="d-none d-md-inline-block">Decline</span></button>
+                        <button (click)="yesAssist(item)" type="button" class="btn btn-outline-primary"><i class="fas fa-sign-in-alt mr-1"></i><span class="d-none d-md-inline-block">Go!</span></button>
+                        <button (click)="noAssist(item)" type="button" class="btn btn-outline-warning"><i class="fas fa-minus-circle mr-1"></i><span class="d-none d-md-inline-block">Decline</span></button>
                     </div>
+                </td>
+                <td>
+                    <span class="text-success" *ngIf="checkAssist(item) === true"><i class="fas fa-check mr-2"></i> You joined
+                    </span>
+                    <span class="text-danger" *ngIf="checkAssist(item) === false"><i class="fas fa-times mr-2"></i> You
+                        are not in</span>
                 </td>
             </tr>
         </tbody>

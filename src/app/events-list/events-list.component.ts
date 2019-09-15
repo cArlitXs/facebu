@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
+import { Event } from "../models/event";
 import { Assist } from "../models/assist";
 import { EventService } from '../services/event.service';
 import { AssistService } from '../services/assist.service';
+import { resolve } from 'url';
 
 @Component({
     selector: "app-events-list",
@@ -10,13 +12,13 @@ import { AssistService } from '../services/assist.service';
 })
 export class EventsListComponent implements OnInit {
 
-    assist: Assist;
     event: Event;
+    assist: Assist;
 
-    eventsArr: Event[];
-    assistArr: Assist[];
+    eventsArr: Event[] = new Array();
+    assistArr: Assist[] = new Array();
 
-    _assist: boolean;
+    tempAssist: Assist[] = new Array();
 
     constructor(private eventService: EventService, private assistService: AssistService) { }
 
@@ -29,7 +31,7 @@ export class EventsListComponent implements OnInit {
         );
     }
 
-    insertAssist(eventId: number, state: string) {
+    insertAssist(eventId: number, state: boolean) {
         this.assist = {
             "id": 0,
             "user": 1,
@@ -41,7 +43,7 @@ export class EventsListComponent implements OnInit {
         );
     }
 
-    updateAssist(eventId: number, state: string, assistId: number) {
+    updateAssist(eventId: number, state: boolean, assistId: number) {
         this.assist = {
             "id": assistId,
             "user": 1,
@@ -51,11 +53,69 @@ export class EventsListComponent implements OnInit {
         this.assistService.updateAssist(this.assist).subscribe();
     }
 
-    setAssist(a: any[]): void {
-        this.assistArr = a;
+    /*resolveAssistAsync(parsedEvent: Event) {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve(this.resolveAssist(parsedEvent));
+            }, 1000);
+        });
     }
 
-    setEvents(e: any[]): void {
-        this.eventsArr = e;
+    resolveAssist(parsedEvent: Event): Assist[] {
+
+        this.assistService.getAssist(1, parsedEvent.id).subscribe(assits => {
+            this.tempAssist = assits as Assist[];
+        });
+        return this.tempAssist;
+        //this.updateAssist(parsedEvent.id, state, this.tempAssist[0].id);
     }
+
+    async yesAssist(parsedEvent: Event) {
+        let result = await this.resolveAssistAsync(parsedEvent);
+        this.updateAssist(parsedEvent.id, true, result[0].id);
+    }
+
+    async noAssist(parsedEvent: Event) {
+        let result = await this.resolveAssistAsync(parsedEvent);
+        this.updateAssist(parsedEvent.id, false, result[0].id);
+    }*/
+
+    async asyncAssist(parsedEvent: Event, state: boolean) {
+        await this.resolveAfter1Second(parsedEvent, state);
+    }
+
+    resolveAfter1Second(parsedEvent: Event, state: boolean) {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve(this.assistService.getAssist(1, parsedEvent.id).subscribe(assits => {
+                    this.tempAssist = assits as Assist[];
+                    this.updateAssist(parsedEvent.id, state, this.tempAssist[0].id);
+                }));
+            }, 1000);
+        });
+    }
+
+    yesAssist(parsedEvent: Event) {
+        this.asyncAssist(parsedEvent, true).then(() => { console.log("Updated") })
+    }
+
+    noAssist(parsedEvent: Event) {
+        this.asyncAssist(parsedEvent, false).then(() => { console.log("Updated") })
+    }
+
+    checkAssist(parsedEvent: Event): boolean {
+        
+        let result: boolean = false;
+
+        this.assistArr.forEach(assist => {
+            console.log(assist);
+            if (assist.event === parsedEvent.id && assist.user === 1 && assist.state) {
+                result = true;
+                return;
+            }
+        });
+
+        return result;
+    }
+
 }

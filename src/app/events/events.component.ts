@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from '../services/event.service';
-import { EventsListComponent } from '../events-list/events-list.component';
 import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Event } from "../models/event";
 
