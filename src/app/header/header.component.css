@@ -61,3 +61,7 @@
     z-index: 500;
     margin-top: -15px !important;
 }
+
+.dropdown-toggle {
+    cursor: pointer;
+}

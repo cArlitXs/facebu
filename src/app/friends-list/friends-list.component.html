@@ -1,0 +1,16 @@
+<div class="row">
+    <h5 class="text-muted">Friend list</h5>
+    <div class="col-12" *ngFor="let item of userTargetArr">
+        <div class="media">
+            <i class="fas fa-user-astronaut align-self-center friend-profile pt-0"></i>
+            <div class="media-body pt-3">
+                <p class="mt-0">
+                    <span class="font-weight-bold px-3">{{item.name}} {{item.surname}}</span>
+                    <button type="button" class="btn btn-danger btn-sm rounded-circle mb-0" (click)="deleteFriend()"><i
+                            class="fas fa-times"></i></button>
+                </p>
+            </div>
+            <div class="dropdown-divider"></div>
+        </div>
+    </div>
+</div>

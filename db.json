@@ -16,6 +16,15 @@
             "user": "user",
             "pass": "pass",
             "id": 2
+        },
+        {
+            "name": "USUARIO3",
+            "surname": "APELLIDOS3",
+            "birdthDate": "12/12/2019",
+            "startDate": "12/12/2019",
+            "user": "user",
+            "pass": "pass",
+            "id": 3
         }
     ],
     "events": [{
@@ -92,9 +101,22 @@
         }
     ],
     "relationship": [{
-        "userOrigin": "1",
-        "userTarget": "2"
-    }],
+            "userOrigin": "1",
+            "userTarget": "2"
+        },
+        {
+            "userOrigin": "1",
+            "userTarget": "3"
+        },
+        {
+            "userOrigin": "2",
+            "userTarget": "1"
+        },
+        {
+            "userOrigin": "3",
+            "userTarget": "1"
+        }
+    ],
     "messages": [{
         "id": "1",
         "content": "Mensaje1",

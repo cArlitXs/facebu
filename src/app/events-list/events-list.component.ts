@@ -37,7 +37,7 @@ export class EventsListComponent implements OnInit {
       },
       error => console.log(error)
     );
-    this.arrayLocal();
+    // this.arrayLocal();
   }
 
   insertAssist(eventId: number, state: boolean) {
