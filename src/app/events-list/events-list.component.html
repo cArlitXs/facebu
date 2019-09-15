@@ -16,6 +16,7 @@
                 <th>Description</th>
                 <th>Date</th>
                 <th>Parcitipation</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -24,12 +25,24 @@
                 <td>{{item.description}}</td>
                 <td>{{item.eventDate}}</td>
                 <td>
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
                         <label class="btn btn-outline-success">
-                            <input type="checkbox" [checked]="item.checked == true" autocomplete="off"><i
+                            <input type="checkbox" [checked]="item.checked" autocomplete="off"><i
                                 class="fas fa-sign-in-alt mr-1"></i><span class="d-none d-md-inline-block">Go!</span>
                         </label>
+                    </div> -->
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-outline-primary" (click)="confirmAssist(item)"><i
+                                class="fas fa-sign-in-alt mr-1"></i>Go!</button>
+                        <button type="button" class="btn btn-outline-warning" (click)="declineAssist(item)"><i
+                                class="fas fa-minus-circle mr-1"></i>Decline</button>
                     </div>
+                </td>
+                <td>
+                    <span class="text-success" *ngIf="item.checked == true"><i class="fas fa-check mr-2"></i> You accepted
+                    </span>
+                    <span class="text-danger" *ngIf="item.checked == false"><i class="fas fa-times mr-2"></i> You
+                        rejected</span>
                 </td>
             </tr>
         </tbody>

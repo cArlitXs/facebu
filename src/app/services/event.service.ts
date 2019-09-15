@@ -9,19 +9,21 @@ import { environment } from "../../environments/environment";
 export class EventService {
   constructor(private http: HttpClient) {}
 
-    url: string = environment.apiUrl.concat("/events");
+  url: string = environment.apiUrl.concat("/events");
 
-    getAllEvents() {
-        return this.http.get(this.url);
-    }
+  getAllEvents() {
+    return this.http.get(this.url);
+  }
 
-    addEvent(event: Event) {
-        return this.http.post<Event>(this.url, event);
-    }
+  addEvent(event: Event) {
+    return this.http.post<Event>(this.url, event);
+  }
+  updateEvent(event: Event) {
+    return this.http.put<Event>(this.url + "/" + event.id, event);
+  }
 
-    // There is no user login
-    getUserEvents() {
-        return this.http.get(this.url+"?users_like=1");
-    }
-
+  // There is no user login
+  getUserEvents() {
+    return this.http.get(this.url + "?users_like=1");
+  }
 }
