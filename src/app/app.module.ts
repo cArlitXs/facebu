@@ -14,6 +14,7 @@ import { EventsComponent } from './events/events.component';
 import { FriendsComponent } from './friends/friends.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EventsListComponent } from './events-list/events-list.component';
+import { FormsModule } from '@angular/forms';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { Routes , RouterModule} from '@angular/router';
@@ -34,6 +35,7 @@ import { FriendsListComponent } from './friends-list/friends-list.component';
     FriendsListComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
