@@ -25,24 +25,16 @@
                 <td>{{item.description}}</td>
                 <td>{{item.eventDate}}</td>
                 <td>
-                    <!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-outline-success">
-                            <input type="checkbox" [checked]="item.checked" autocomplete="off"><i
-                                class="fas fa-sign-in-alt mr-1"></i><span class="d-none d-md-inline-block">Go!</span>
-                        </label>
-                    </div> -->
-                    <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-outline-primary" (click)="confirmAssist(item)"><i
-                                class="fas fa-sign-in-alt mr-1"></i>Go!</button>
-                        <button type="button" class="btn btn-outline-warning" (click)="declineAssist(item)"><i
-                                class="fas fa-minus-circle mr-1"></i>Decline</button>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button (click)="yesAssist(item)" type="button" class="btn btn-outline-primary"><i class="fas fa-sign-in-alt mr-1"></i><span class="d-none d-md-inline-block">Go!</span></button>
+                        <button (click)="noAssist(item)" type="button" class="btn btn-outline-warning"><i class="fas fa-minus-circle mr-1"></i><span class="d-none d-md-inline-block">Decline</span></button>
                     </div>
                 </td>
                 <td>
-                    <span class="text-success" *ngIf="item.checked == true"><i class="fas fa-check mr-2"></i> You accepted
+                    <span class="text-success" *ngIf="checkAssist(item) === true"><i class="fas fa-check mr-2"></i> You joined
                     </span>
-                    <span class="text-danger" *ngIf="item.checked == false"><i class="fas fa-times mr-2"></i> You
-                        rejected</span>
+                    <span class="text-danger" *ngIf="checkAssist(item) === false"><i class="fas fa-times mr-2"></i> You
+                        are not in</span>
                 </td>
             </tr>
         </tbody>

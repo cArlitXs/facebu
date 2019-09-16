@@ -1,135 +1,153 @@
 {
-    "users": [{
-            "name": "USUARIO1",
-            "surname": "APELLIDOS1",
-            "birdthDate": "12/12/2019",
-            "startDate": "12/12/2019",
-            "user": "user",
-            "pass": "pass",
-            "id": 1
-        },
-        {
-            "name": "USUARIO2",
-            "surname": "APELLIDOS2",
-            "birdthDate": "12/12/2019",
-            "startDate": "12/12/2019",
-            "user": "user",
-            "pass": "pass",
-            "id": 2
-        },
-        {
-            "name": "USUARIO3",
-            "surname": "APELLIDOS3",
-            "birdthDate": "12/12/2019",
-            "startDate": "12/12/2019",
-            "user": "user",
-            "pass": "pass",
-            "id": 3
-        }
-    ],
-    "events": [{
-            "id": "1",
-            "name": "Evento1",
-            "description": "Desc1",
-            "eventDate": "12/12/2019",
-            "users": [
-                1,
-                2
-            ]
-        },
-        {
-            "id": "2",
-            "name": "Evento2",
-            "description": "Desc2",
-            "eventDate": "12/12/2019",
-            "users": [
-                1,
-                2
-            ]
-        },
-        {
-            "id": "3",
-            "name": "Evento3",
-            "description": "Desc3",
-            "eventDate": "12/12/2019",
-            "users": [
-                2
-            ]
-        },
-        {
-            "id": "4",
-            "name": "Evento4",
-            "description": "Desc4",
-            "eventDate": "12/12/2019",
-            "users": [
-                1
-            ]
-        },
-        {
-            "id": "5",
-            "name": "Evento5",
-            "description": "Desc5",
-            "eventDate": "12/12/2019",
-            "users": [
-                2
-            ]
-        }
-    ],
-    "assist": [{
-            "id": "1",
-            "user": "1",
-            "event": "1",
-            "state": true
-        },
-        {
-            "id": "2",
-            "user": "2",
-            "event": "2",
-            "state": true
-        },
-        {
-            "id": "3",
-            "user": "2",
-            "event": "1",
-            "state": false
-        },
-        {
-            "id": "4",
-            "user": "1",
-            "event": "2",
-            "state": false
-        }
-    ],
-    "relationship": [{
-            "id": "1",
-            "userOrigin": "1",
-            "userTarget": "2"
-        },
-        {
-            "id": "2",
-            "userOrigin": "1",
-            "userTarget": "3"
-        },
-        {
-            "id": "3",
-            "userOrigin": "2",
-            "userTarget": "1"
-        },
-        {
-            "id": "4",
-            "userOrigin": "3",
-            "userTarget": "1"
-        }
-    ],
-    "messages": [{
-        "id": "1",
-        "content": "Mensaje1",
-        "publishDate": "12/12/2019",
-        "user": "1"
-    }],
-    "reaction": [{
-        "messageId": "1",
-        "userId": "1",
-        "reactionType": "Reac"
-    }]
+  "users": [
+    {
+      "name": "USUARIO1",
+      "surname": "APELLIDOS1",
+      "birdthDate": "12/12/2019",
+      "startDate": "12/12/2019",
+      "user": "user",
+      "pass": "pass",
+      "id": 1
+    },
+    {
+      "name": "USUARIO2",
+      "surname": "APELLIDOS2",
+      "birdthDate": "12/12/2019",
+      "startDate": "12/12/2019",
+      "user": "user",
+      "pass": "pass",
+      "id": 2
+    },
+    {
+      "name": "USUARIO3",
+      "surname": "APELLIDOS3",
+      "birdthDate": "12/12/2019",
+      "startDate": "12/12/2019",
+      "user": "user",
+      "pass": "pass",
+      "id": 3
+    },
+    {
+      "name": "USUARIO4",
+      "surname": "APELLIDOS4",
+      "birdthDate": "12/12/2019",
+      "startDate": "12/12/2019",
+      "user": "user",
+      "pass": "pass",
+      "id": 4
+    }
+  ],
+  "events": [
+    {
+      "id": "1",
+      "name": "Evento1",
+      "description": "Desc1",
+      "eventDate": "12/12/2019",
+      "users": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Evento2",
+      "description": "Desc2",
+      "eventDate": "12/12/2019",
+      "users": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Evento3",
+      "description": "Desc3",
+      "eventDate": "12/12/2019",
+      "users": [
+        2
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Evento4",
+      "description": "Desc4",
+      "eventDate": "12/12/2019",
+      "users": [
+        1
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Evento5",
+      "description": "Desc5",
+      "eventDate": "12/12/2019",
+      "users": [
+        2
+      ]
+    }
+  ],
+  "assist": [
+    {
+      "id": "1",
+      "user": 1,
+      "event": "2",
+      "state": false
+    },
+    {
+      "id": "2",
+      "user": "2",
+      "event": "2",
+      "state": "true"
+    },
+    {
+      "id": "3",
+      "user": "2",
+      "event": "1",
+      "state": "true"
+    },
+    {
+      "id": "4",
+      "user": 1,
+      "event": "4",
+      "state": false
+    },
+    {
+      "id": "5",
+      "user": 1,
+      "event": "4",
+      "state": true
+    }
+  ],
+  "relationship": [
+    {
+      "userOrigin": "1",
+      "userTarget": "2",
+      "state": "friends"
+    },
+    {
+      "userOrigin": "1",
+      "userTarget": "3",
+      "state": "pending"
+    },
+    {
+      "userOrigin": "4",
+      "userTarget": "1",
+      "state": "pending"
+    }
+  ],
+  "messages": [
+    {
+      "id": "1",
+      "content": "Mensaje1",
+      "publishDate": "12/12/2019",
+      "user": "1"
+    }
+  ],
+  "reaction": [
+    {
+      "messageId": "1",
+      "userId": "1",
+      "reactionType": "Reac"
+    }
+  ]
 }
