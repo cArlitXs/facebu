@@ -1,6 +1,5 @@
-import { User } from './user';
-
 export class Relationship {
+    id: number;
     userOrigin: number;
     userTarget: number;
 }

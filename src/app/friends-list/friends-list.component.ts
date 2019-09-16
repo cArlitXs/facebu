@@ -59,7 +59,17 @@ export class FriendsListComponent implements OnInit {
     }
   }
 
-  deleteFriend() {
-    console.log("Delete relationship");
+  deleteFriend(userTarget: User) {
+    for (let i of this.relationsArr) {
+      if (i.userOrigin == 1 && i.userTarget == userTarget.id) {
+        this.friendService
+          .deleteRelationship(i.id)
+          .subscribe(data => {
+            this.relationsArr = this.relationsArr.filter(el => {
+              return el.id !== el.id;
+            });
+          });
+      }
+    }
   }
 }

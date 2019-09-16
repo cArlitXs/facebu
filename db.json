@@ -101,18 +101,22 @@
         }
     ],
     "relationship": [{
+            "id": "1",
             "userOrigin": "1",
             "userTarget": "2"
         },
         {
+            "id": "2",
             "userOrigin": "1",
             "userTarget": "3"
         },
         {
+            "id": "3",
             "userOrigin": "2",
             "userTarget": "1"
         },
         {
+            "id": "4",
             "userOrigin": "3",
             "userTarget": "1"
         }
