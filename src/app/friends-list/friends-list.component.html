@@ -1,16 +1,40 @@
 <div class="row">
-    <h5 class="text-muted">Friend list</h5>
-    <div class="col-12" *ngFor="let item of userTargetArr">
-        <div class="media">
-            <i class="fas fa-user-astronaut align-self-center friend-profile pt-0"></i>
-            <div class="media-body pt-3">
-                <p class="mt-0">
-                    <span class="font-weight-bold px-3">{{item.name}} {{item.surname}}</span>
-                    <button type="button" class="btn btn-danger btn-sm rounded-circle mb-0" (click)="deleteFriend(item)"><i
-                            class="fas fa-times"></i></button>
-                </p>
+    <div class="col-12">
+        <h5 class="text-muted">Friend list</h5>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div *ngFor="let item of userTargetArr">
+            <div class="media">
+                <i class="fas fa-user-astronaut align-self-center friend-profile pt-0"></i>
+                <div class="media-body pt-3">
+                    <p class="mt-0">
+                        <span class="font-weight-bold px-3 btn btn-link" (click)="setShowUser(item)">{{item.name}}
+                            {{item.surname}}</span>
+                        <button type="button" class="btn btn-danger btn-sm rounded-circle mb-0" (click)="deleteFriend(item)"><i class="fas fa-times"></i></button>
+                    </p>
+                </div>
             </div>
             <div class="dropdown-divider"></div>
+        </div>
+    </div>
+    <div class="col-md-8" *ngIf="userClick.id != 0">
+        <div class="card mb-3">
+            <div class="card-header">
+                <div class="row">
+                    <span class="pl-3">{{userClick.name}} {{userClick.surname}}</span>
+                    <span class="badge badge-pill badge-success ml-auto">Friend</span>
+                    <!-- <span class="badge badge-pill badge-info ml-auto">Pending</span>
+                    <span class="badge badge-pill badge-warning ml-auto">Not Friend</span> -->
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="media">
+                    <i class="fas fa-user-astronaut align-self-center friend-profile-info px-2"></i>
+                    <div class="media-body pl-2">Birthdate: {{userClick.birdthDate}}</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

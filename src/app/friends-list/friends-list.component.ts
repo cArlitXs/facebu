@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, SimpleChanges } from "@angular/core";
 import { Relationship } from "../models/relationship";
 import { FriendsService } from "../services/friends.service";
 import { User } from "../models/user";
@@ -21,23 +21,35 @@ export class FriendsListComponent implements OnInit {
   userTarget: User;
   userTargetArr: User[] = new Array();
 
+  userClick: User = {
+    name: "",
+    surname: "",
+    birdthDate: "",
+    startDate: "",
+    user: "",
+    pass: "",
+    id: 0
+  };
+
   ngOnInit() {
     this.getRelationship();
   }
 
   getRelationship() {
+    this.relationsArr = [];
+    this.userTargetId = [];
+    this.userTargetArr = [];
     this.friendService.getRelationship().subscribe(
       relation => {
         this.relationsArr = relation as Relationship[];
-      },
-      error => console.error(error),
-      () => {
         this.setUsers();
-      }
+      },
+      error => console.error(error)
     );
   }
 
   findUserById(id: number) {
+    this.userTarget = null;
     this.userService.findById(id).subscribe(
       user => {
         this.userTarget = user as User;
@@ -45,6 +57,19 @@ export class FriendsListComponent implements OnInit {
       error => console.error(error),
       () => {
         this.userTargetArr.push(this.userTarget);
+        if (this.userTargetArr.length > 0) {
+          this.userClick = this.userTargetArr[0];
+        } else {
+          this.userClick = {
+            name: "",
+            surname: "",
+            birdthDate: "",
+            startDate: "",
+            user: "",
+            pass: "",
+            id: 0
+          };
+        }
       }
     );
   }
@@ -60,16 +85,20 @@ export class FriendsListComponent implements OnInit {
   }
 
   deleteFriend(userTarget: User) {
+    console.log(userTarget.id);
+
+    this.userTargetArr = [];
+
     for (let i of this.relationsArr) {
       if (i.userOrigin == 1 && i.userTarget == userTarget.id) {
-        this.friendService
-          .deleteRelationship(i.id)
-          .subscribe(data => {
-            this.relationsArr = this.relationsArr.filter(el => {
-              return el.id !== el.id;
-            });
-          });
+        this.friendService.deleteRelationship(i.id).subscribe(data => {
+          this.getRelationship();
+        });
       }
     }
+  }
+
+  setShowUser(user: User) {
+    this.userClick = user;
   }
 }
