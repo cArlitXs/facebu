@@ -65,3 +65,11 @@
 .dropdown-toggle {
     cursor: pointer;
 }
+
+.cut-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* display: inline-block; */
+    line-height: inherit;
+}

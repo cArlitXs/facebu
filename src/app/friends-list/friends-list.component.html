@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row pt-2">
     <div class="col-12">
         <h4 class="text-muted">Friend page</h4>
     </div>
@@ -19,7 +19,7 @@
                     <i class="fas fa-user-astronaut align-self-center friend-profile pt-0"></i>
                     <div class="media-body pt-3">
                         <p class="mt-0">
-                            <span class="font-weight-bold px-3 btn btn-link" (click)="setShowUser(item)">{{item.name}}
+                            <span class="font-weight-bold px-3 btn btn-link text-truncate col-8" (click)="setShowUser(item)">{{item.name}}
                                 {{item.surname}}</span>
                             <button type="button" class="btn btn-danger btn-sm rounded-circle mb-0" (click)="deleteFriend(item)"><i class="fas fa-times"></i></button>
                         </p>
@@ -36,7 +36,7 @@
                     <i class="fas fa-user-astronaut align-self-center friend-profile pt-0"></i>
                     <div class="media-body pt-3">
                         <p class="mt-0">
-                            <span class="font-weight-bold px-3 btn btn-link" (click)="setShowUser(item)">{{item.name}}
+                            <span class="font-weight-bold px-3 btn btn-link text-truncate col-8" (click)="setShowUser(item)">{{item.name}}
                                 {{item.surname}}</span>
                             <button type="button" class="btn btn-danger btn-sm rounded-circle mb-0" (click)="deleteFriend(item)"><i class="fas fa-times"></i></button>
                         </p>
@@ -58,12 +58,7 @@
             </div>
             <div class="card-body">
                 <div class="media">
-                    <span *ngIf="userClick.id % 2 == 0" class="text-info">
-                        <i class="fas fa-user-astronaut align-self-center friend-profile-info px-2"></i>
-                    </span>
-                    <span *ngIf="userClick.id % 2 != 0" class="text-warning">
-                        <i class="fas fa-user-astronaut align-self-center friend-profile-info px-2"></i>
-                    </span>
+                    <i class="fas fa-user-astronaut align-self-center friend-profile-info px-2"></i>
                     <div class="media-body pl-2">Birthdate: {{userClick.birdthDate}}</div>
                 </div>
             </div>

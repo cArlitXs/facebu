@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { UserService } from '../services/user.service';
+import { User } from '../models/user';
 
 @Component({
   selector: "app-header",
@@ -6,13 +8,26 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./header.component.css"]
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  constructor(private userService: UserService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getUserName(1);
+  }
 
   open: boolean = false;
 
-  userName: string = "Name Surname";
+  user: User;
+
+  userName: string = "";
+
+  getUserName(id: number){
+    this.userService.findById(id).subscribe(
+      data => {
+        this.user = data as User;
+        this.userName = this.user.name.concat(' ').concat(this.user.surname);
+      }
+    );
+  }
 
   toogleOpen() {
     this.open = !this.open;
