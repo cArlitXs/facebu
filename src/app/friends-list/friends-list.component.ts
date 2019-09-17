@@ -20,6 +20,8 @@ export class FriendsListComponent implements OnInit {
   userTargetId: number[] = new Array();
   userTarget: User;
   userTargetArr: User[] = new Array();
+  searchText: string = '';
+  allUsers: User[] = new Array();
 
   userClick: User = {
     name: "",
@@ -33,6 +35,15 @@ export class FriendsListComponent implements OnInit {
 
   ngOnInit() {
     this.getRelationship();
+    this.getAllUsers();
+  }
+
+  getAllUsers(){
+    this.userService.getAllUsers().subscribe(
+      data => {
+        this.allUsers = data as User[];
+      }
+    );
   }
 
   getRelationship() {
