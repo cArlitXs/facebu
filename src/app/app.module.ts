@@ -21,6 +21,9 @@ import { Routes , RouterModule} from '@angular/router';
 import { AssistService } from './services/assist.service';
 import { EventService } from './services/event.service';
 import { FriendsListComponent } from './friends-list/friends-list.component';
+import { StoriesListComponent } from './stories-list/stories-list.component';
+import { StoriesPublishComponent } from './stories-publish/stories-publish.component';
+import { StoriesService } from './services/stories.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { FriendsListComponent } from './friends-list/friends-list.component';
     FooterComponent,
     HeaderComponent,
     EventsListComponent,
-    FriendsListComponent
+    FriendsListComponent,
+    StoriesListComponent,
+    StoriesPublishComponent
   ],
   imports: [
     FormsModule,
@@ -43,7 +48,8 @@ import { FriendsListComponent } from './friends-list/friends-list.component';
   ],
   providers: [
     EventService,
-    AssistService
+    AssistService,
+    StoriesService
   ],
   bootstrap: [AppComponent]
 })

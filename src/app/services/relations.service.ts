@@ -2,11 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Relationship } from "../models/relationship";
 import { environment } from "../../environments/environment";
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
 })
 export class RelationsService {
+
+    allFriendsObservable: Observable<Object>[] = new Array();
 
     constructor(private http: HttpClient) { }
 
@@ -34,6 +37,11 @@ export class RelationsService {
     }
     getReceivedFriends() {
         return this.http.get(this.url+"?userTarget_like=1&state_like=friends");
+    }
+    getAllFriends() {
+        this.allFriendsObservable.push(this.getSendedFriends());
+        this.allFriendsObservable.push(this.getReceivedFriends());
+        return this.allFriendsObservable;
     }
 
     // Remove friend

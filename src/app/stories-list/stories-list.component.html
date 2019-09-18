@@ -1,0 +1,16 @@
+<section>
+    <!--*ngfor="item of allMessages"-->
+    <article *ngFor="let item of allMessages" class="card media my-3 px-3 py-3">
+        <div class="row">
+            <div class="col">
+                <i class="fas fa-user-astronaut"></i>
+            </div>
+            <div class="col">
+                <div class="media-body">
+                    <h5>{{item.userName}}</h5>
+                    <p>{{item.content}}</p>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>

@@ -4,5 +4,5 @@ export class Message {
   id: number;
   content: string;
   publishDate: string;
-  user: User;
+  user: number;
 }
