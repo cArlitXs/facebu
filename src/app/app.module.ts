@@ -45,7 +45,8 @@ import { Ng2SearchPipeModule } from "ng2-search-filter";
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
-    routing
+    routing,
+    Ng2SearchPipeModule
   ],
   providers: [
     EventService,

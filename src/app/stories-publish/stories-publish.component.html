@@ -1,7 +1,10 @@
-<article class="container-fluid">
-    <section class="row card media my-3 px-3 py-3">
-        <label for="message">Write new message</label>
-        <textarea type="text" id="message" class="textarea textarea-auto form-control"></textarea>
-        <button class="btn btn-primary mt-1 ml-auto" type="submit">Publish</button>
-    </section>
-</article>
+<form [formGroup]="form">
+    <article class="container-fluid">
+        <section class="row card media my-3 px-3 py-3">
+            <label for="message">Write new message</label>
+            <textarea rows="3" formControlName="content" class="textarea textarea-auto form-control"></textarea>
+            <button type="submit" [disabled]="!form.valid" (click)="addMessage()"
+                class="btn btn-primary mt-1 ml-auto">Publicar</button>
+        </section>
+    </article>
+</form>

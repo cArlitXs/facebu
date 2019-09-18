@@ -158,39 +158,45 @@
   ],
   "messages": [
     {
-      "id": "1",
+      "id": 1,
       "content": "Mensaje 1 por user 1",
       "publishDate": "12/12/2019",
       "user": "1"
     },
     {
-      "id": "2",
+      "id": 2,
       "content": "Mensaje 2 por user 1",
       "publishDate": "12/12/2019",
       "user": "1"
     },
     {
-      "id": "3",
+      "id": 3,
       "content": "Mensaje 1 por user 2",
       "publishDate": "12/12/2019",
       "user": "2"
     },
     {
-      "id": "4",
+      "id": 4,
       "content": "Mensaje 2 por user 2",
       "publishDate": "12/12/2019",
       "user": "2"
     },
     {
-      "id": "5",
+      "id": 5,
       "content": "Mensaje 1 por user 3",
       "publishDate": "12/12/2019",
       "user": "3"
+    },
+    {
+      "content": "Jaja salu2",
+      "user": 1,
+      "publishDate": "3/8/2019",
+      "id": 6
     }
   ],
   "reaction": [
     {
-      "messageId": "1",
+      "messageId": 1,
       "userId": "1",
       "reactionType": "Reac"
     }
