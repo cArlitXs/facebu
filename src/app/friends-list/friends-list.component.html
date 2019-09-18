@@ -1,25 +1,52 @@
-<div class="row">
+<div class="row pt-2">
     <div class="col-12">
-        <h5 class="text-muted">Friend list</h5>
+        <h4 class="text-muted">Friend page</h4>
     </div>
 </div>
 <div class="row">
     <div class="col-md-4">
-        <div *ngFor="let item of userTargetArr">
-            <div class="media">
-                <i class="fas fa-user-astronaut align-self-center friend-profile pt-0"></i>
-                <div class="media-body pt-3">
-                    <p class="mt-0">
-                        <span class="font-weight-bold px-3 btn btn-link" (click)="setShowUser(item)">{{item.name}}
-                            {{item.surname}}</span>
-                        <button type="button" class="btn btn-danger btn-sm rounded-circle mb-0" (click)="deleteFriend(item)"><i class="fas fa-times"></i></button>
-                    </p>
-                </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search your friend..." [(ngModel)]="searchText">
+            <div class="input-group-append">
+                <span class="input-group-text bg-primary text-white btn btn-primary"><i
+                        class="fas fa-search"></i></span>
             </div>
-            <div class="dropdown-divider"></div>
+        </div>
+        <div *ngIf="searchText == ''">
+            <h5 class="text-muted">Your friend list</h5>
+            <div *ngFor="let item of userTargetArr | filter:searchText">
+                <div class="media">
+                    <i class="fas fa-user-astronaut align-self-center friend-profile pt-0"></i>
+                    <div class="media-body pt-3">
+                        <p class="mt-0">
+                            <span class="font-weight-bold px-3 btn btn-link text-truncate col-8" (click)="setShowUser(item)">{{item.name}}
+                                {{item.surname}}</span>
+                            <button type="button" class="btn btn-danger btn-sm rounded-circle mb-0" (click)="deleteFriend(item)"><i class="fas fa-times"></i></button>
+                        </p>
+                    </div>
+                </div>
+                <div class="dropdown-divider"></div>
+            </div>
+        </div>
+
+        <div *ngIf="searchText != ''">
+            <h5 class="text-muted">Found users list</h5>
+            <div *ngFor="let item of allUsers | filter:searchText">
+                <div class="media">
+                    <i class="fas fa-user-astronaut align-self-center friend-profile pt-0"></i>
+                    <div class="media-body pt-3">
+                        <p class="mt-0">
+                            <span class="font-weight-bold px-3 btn btn-link text-truncate col-8" (click)="setShowUser(item)">{{item.name}}
+                                {{item.surname}}</span>
+                            <button type="button" class="btn btn-danger btn-sm rounded-circle mb-0" (click)="deleteFriend(item)"><i class="fas fa-times"></i></button>
+                        </p>
+                    </div>
+                </div>
+                <div class="dropdown-divider"></div>
+            </div>
         </div>
     </div>
-    <div class="col-md-8" *ngIf="userClick.id != 0">
+    <div class="col-md-8" *ngIf="userClick.id != -1">
         <div class="card mb-3">
             <div class="card-header">
                 <div class="row">

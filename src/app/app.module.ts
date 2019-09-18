@@ -1,20 +1,20 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 
-import { AppComponent } from './app.component';
+import { AppComponent } from "./app.component";
 
-import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from "./footer/footer.component";
+import { HeaderComponent } from "./header/header.component";
 
-import { routing } from './app.routes';
+import { routing } from "./app.routes";
 
-import { StoriesComponent } from './stories/stories.component';
-import { EventsComponent } from './events/events.component';
-import { FriendsComponent } from './friends/friends.component';
-import { ProfileComponent } from './profile/profile.component';
-import { EventsListComponent } from './events-list/events-list.component';
-import { FormsModule } from '@angular/forms';
+import { StoriesComponent } from "./stories/stories.component";
+import { EventsComponent } from "./events/events.component";
+import { FriendsComponent } from "./friends/friends.component";
+import { ProfileComponent } from "./profile/profile.component";
+import { EventsListComponent } from "./events-list/events-list.component";
+import { FormsModule } from "@angular/forms";
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { Routes , RouterModule} from '@angular/router';
@@ -24,6 +24,7 @@ import { FriendsListComponent } from './friends-list/friends-list.component';
 import { StoriesListComponent } from './stories-list/stories-list.component';
 import { StoriesPublishComponent } from './stories-publish/stories-publish.component';
 import { StoriesService } from './services/stories.service';
+import { Ng2SearchPipeModule } from "ng2-search-filter";
 
 @NgModule({
   declarations: [
@@ -49,8 +50,9 @@ import { StoriesService } from './services/stories.service';
   providers: [
     EventService,
     AssistService,
-    StoriesService
+    StoriesService,
+    Ng2SearchPipeModule
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

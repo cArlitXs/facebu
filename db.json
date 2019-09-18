@@ -30,8 +30,26 @@
     {
       "name": "USUARIO4",
       "surname": "APELLIDOS4",
-      "birdthDate": "12/12/2019",
-      "startDate": "12/12/2019",
+      "birdthDate": "12/12/2014",
+      "startDate": "12/12/2014",
+      "user": "user",
+      "pass": "pass",
+      "id": 4
+    },
+    {
+      "name": "USUARIO5",
+      "surname": "APELLIDOS5",
+      "birdthDate": "12/12/2015",
+      "startDate": "12/12/2015",
+      "user": "user",
+      "pass": "pass",
+      "id": 4
+    },
+    {
+      "name": "USUARIO6",
+      "surname": "APELLIDOS6",
+      "birdthDate": "12/12/2016",
+      "startDate": "12/12/2016",
       "user": "user",
       "pass": "pass",
       "id": 4
@@ -90,8 +108,8 @@
     {
       "id": "1",
       "user": 1,
-      "event": "2",
-      "state": true
+      "event": "1",
+      "state": false
     },
     {
       "id": "2",
@@ -108,7 +126,7 @@
     {
       "id": "4",
       "user": 1,
-      "event": "1",
+      "event": "4",
       "state": false
     },
     {
@@ -120,23 +138,21 @@
   ],
   "relationship": [
     {
+      "id": 1,
       "userOrigin": "1",
       "userTarget": "2",
       "state": "friends"
     },
     {
+      "id": 2,
       "userOrigin": "1",
       "userTarget": "3",
-      "state": "pending"
+      "state": "friends"
     },
     {
+      "id": 3,
       "userOrigin": "4",
       "userTarget": "1",
-      "state": "pending"
-    },
-    {
-      "userOrigin": "2",
-      "userTarget": "3",
       "state": "pending"
     }
   ],
